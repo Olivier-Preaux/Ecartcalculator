@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Ecart
+{% endblock %}
+
+{% block body %}
+	<h1>Ecart Calculator</h1>
+
+    
+		
+			
+Numéro : {{ ecarts.tirage }}</br>
+Douzaine 1 : {{ ecarts.douzaine1 }}</br>
+Douzaine 1 : {{ ecarts.douzaine2 }}</br>
+Douzaine 2 : {{ ecarts.douzaine3 }}</br>
+Colonne 1 : {{ ecarts.colonne1 }}</br>
+Colonne 2 :{{ ecarts.colonne2 }}</br>
+Colonne3 : {{ ecarts.colonne3 }}</br>
+Transversale 1 : {{ ecarts.transversale1 }}</br>
+Transversale 2 : {{ ecarts.transversale2 }}</br>
+Transversale 3 : {{ ecarts.transversale3 }}</br>
+Sixain 1 : {{ ecarts.sixain1 }}</br>
+Sixain 2 : {{ ecarts.sixain2 }}</br>
+Sixain 3 : {{ ecarts.sixain3 }}</br>
+Final 1 : {{ ecarts.final1 }}</br>
+Final 2 : {{ ecarts.final2 }}</br>
+Final 3 : {{ ecarts.final3 }}</br>
+				
+						{# <a href="{{ path('ecart_show', {'id': ecart.id}) }}">show</a>
+						<a href="{{ path('ecart_edit', {'id': ecart.id}) }}">edit</a> #}
+				
+
+    
+	<turbo-frame id="the_frame_id">
+		{{ form_start(form) }}
+		{{ form_widget(form) }}
+		<button class="btn">{{ button_label|default('Save') }}</button>
+		{{ form_end(form) }}
+		{# {{ include('ecart/_form.html.twig') }} #}
+	</turbo-frame>
+
+Entrez "-1" pour réinitialiser
+
+
+{% endblock %}

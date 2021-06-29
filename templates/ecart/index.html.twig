@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ecart index
+{% endblock %}
+
+{% block body %}
+	<h1>Ecart index</h1>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Id</th>
+				<th>Tirage</th>
+				<th>Douzaine1</th>
+				<th>Douzaine2</th>
+				<th>Douzaine3</th>
+				<th>Colonne1</th>
+				<th>Colonne2</th>
+				<th>Colonne3</th>
+				<th>Transversale1</th>
+				<th>Transversale2</th>
+				<th>Transversale3</th>
+				<th>Sixain1</th>
+				<th>Sixain2</th>
+				<th>Sixain3</th>
+				<th>Final1</th>
+				<th>Final2</th>
+				<th>Final3</th>
+				<th>actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for ecart in ecarts %}
+				<tr>
+					<td>{{ ecart.id }}</td>
+					<td>{{ ecart.tirage }}</td>
+					<td>{{ ecart.douzaine1 }}</td>
+					<td>{{ ecart.douzaine2 }}</td>
+					<td>{{ ecart.douzaine3 }}</td>
+					<td>{{ ecart.colonne1 }}</td>
+					<td>{{ ecart.colonne2 }}</td>
+					<td>{{ ecart.colonne3 }}</td>
+					<td>{{ ecart.transversale1 }}</td>
+					<td>{{ ecart.transversale2 }}</td>
+					<td>{{ ecart.transversale3 }}</td>
+					<td>{{ ecart.sixain1 }}</td>
+					<td>{{ ecart.sixain2 }}</td>
+					<td>{{ ecart.sixain3 }}</td>
+					<td>{{ ecart.final1 }}</td>
+					<td>{{ ecart.final2 }}</td>
+					<td>{{ ecart.final3 }}</td>
+					<td>
+						<a href="{{ path('ecart_show', {'id': ecart.id}) }}">show</a>
+						<a href="{{ path('ecart_edit', {'id': ecart.id}) }}">edit</a>
+					</td>
+				</tr>
+			{% else %}
+				<tr>
+					<td colspan="18">no records found</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+
+	<turbo-frame id="the_frame_id">
+		<a href="{{ path('ecart_new') }}">This block is scoped, the rest of the page will not change if you click here!</a>
+	</turbo-frame>
+</br>
+<a href="{{ path('ecart_new') }}">Create new</a>{% endblock %}

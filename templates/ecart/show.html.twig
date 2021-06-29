@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ecart{% endblock %}
+
+{% block body %}
+    <h1>Ecart</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ ecart.id }}</td>
+            </tr>
+            <tr>
+                <th>Tirage</th>
+                <td>{{ ecart.tirage }}</td>
+            </tr>
+            <tr>
+                <th>Douzaine1</th>
+                <td>{{ ecart.douzaine1 }}</td>
+            </tr>
+            <tr>
+                <th>Douzaine2</th>
+                <td>{{ ecart.douzaine2 }}</td>
+            </tr>
+            <tr>
+                <th>Douzaine3</th>
+                <td>{{ ecart.douzaine3 }}</td>
+            </tr>
+            <tr>
+                <th>Colonne1</th>
+                <td>{{ ecart.colonne1 }}</td>
+            </tr>
+            <tr>
+                <th>Colonne2</th>
+                <td>{{ ecart.colonne2 }}</td>
+            </tr>
+            <tr>
+                <th>Colonne3</th>
+                <td>{{ ecart.colonne3 }}</td>
+            </tr>
+            <tr>
+                <th>Transversale1</th>
+                <td>{{ ecart.transversale1 }}</td>
+            </tr>
+            <tr>
+                <th>Transversale2</th>
+                <td>{{ ecart.transversale2 }}</td>
+            </tr>
+            <tr>
+                <th>Transversale3</th>
+                <td>{{ ecart.transversale3 }}</td>
+            </tr>
+            <tr>
+                <th>Sixain1</th>
+                <td>{{ ecart.sixain1 }}</td>
+            </tr>
+            <tr>
+                <th>Sixain2</th>
+                <td>{{ ecart.sixain2 }}</td>
+            </tr>
+            <tr>
+                <th>Sixain3</th>
+                <td>{{ ecart.sixain3 }}</td>
+            </tr>
+            <tr>
+                <th>Final1</th>
+                <td>{{ ecart.final1 }}</td>
+            </tr>
+            <tr>
+                <th>Final2</th>
+                <td>{{ ecart.final2 }}</td>
+            </tr>
+            <tr>
+                <th>Final3</th>
+                <td>{{ ecart.final3 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('ecart_new') }}">back to list</a>
+
+    <a href="{{ path('ecart_edit', {'id': ecart.id}) }}">edit</a>
+
+    {{ include('ecart/_delete_form.html.twig') }}
+{% endblock %}

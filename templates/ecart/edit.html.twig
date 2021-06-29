@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Ecart{% endblock %}
+
+{% block body %}
+    <h1>Edit Ecart</h1>
+
+    {{ include('ecart/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('ecart_new') }}">back to list</a>
+
+    {{ include('ecart/_delete_form.html.twig') }}
+{% endblock %}
