@@ -4,42 +4,85 @@
 {% endblock %}
 
 {% block body %}
-	<h1>Ecart Calculator</h1>
+	<h1 class="text-center">Ecarts Calculator</h1>
 
     
 		
-			
-Numéro : {{ ecarts.tirage }}</br>
-Douzaine 1 : {{ ecarts.douzaine1 }}</br>
-Douzaine 1 : {{ ecarts.douzaine2 }}</br>
-Douzaine 2 : {{ ecarts.douzaine3 }}</br>
-Colonne 1 : {{ ecarts.colonne1 }}</br>
-Colonne 2 :{{ ecarts.colonne2 }}</br>
-Colonne3 : {{ ecarts.colonne3 }}</br>
-Transversale 1 : {{ ecarts.transversale1 }}</br>
-Transversale 2 : {{ ecarts.transversale2 }}</br>
-Transversale 3 : {{ ecarts.transversale3 }}</br>
-Sixain 1 : {{ ecarts.sixain1 }}</br>
-Sixain 2 : {{ ecarts.sixain2 }}</br>
-Sixain 3 : {{ ecarts.sixain3 }}</br>
-Final 1 : {{ ecarts.final1 }}</br>
+<div class="container">			
+
+<div class="my-1 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">Douzaine 1</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.douzaine1 }}</div>
+</div>
+<div class="my-1 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">Douzaine 2</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.douzaine2 }}</div>
+</div>
+<div class="mt-1 mb-3 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">Douzaine 3</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.douzaine3 }}</div>
+</div>
+
+<div class="my-1 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">Colonne 1</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.colonne1 }}</div>
+</div>
+<div class="my-1 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">Colonne 2</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.colonne2 }}</div>
+</div>
+<div class="mt-1 mb-3 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">Colonne 3</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.colonne3 }}</div>
+</div>
+
+<div class="col-8 mx-auto my-1 d-flex flex-row border border-primary rounded text-center">
+	<div class="fs-2 px-4 col-8 ">{{ form_start(form) }}
+		{{ form_widget(form) }}
+		<button class="btn btn-primary my-1 py-1">{{ button_label|default('Save') }}</button>
+		{{ form_end(form) }}</div>  
+	<div class="fs-2 fw-bold my-auto mx-1 py-2 text-white text-center col-3 bg-primary rounded ">{{ ecarts.tirage }}</div>
+</div>    
+
+<div class="text-center fst-italic">Entrez "-1" pour réinitialiser</div>
+
+<div class="my-1 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">Transversale 1</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.transversale1 }}</div>
+</div>
+<div class="my-1 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">transversale 2</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.transversale2 }}</div>
+</div>
+<div class="mt-1 mb-3 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">Transversale 3</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.transversale3 }}</div>
+</div>
+
+<div class="my-1 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">Sixain 1</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.sixain1 }}</div>
+</div>
+<div class="my-1 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">Sixain 2</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.sixain2 }}</div>
+</div>
+<div class="mt-1 mb-3 d-flex flex-row border border-success rounded">
+	<div class="fs-4 ps-2 col-10 ">Sixain 3</div>  
+	<div class="fs-4 fw-bold text-white text-center col-2 bg-success ">{{ ecarts.sixain3 }}</div>
+</div>
+
+
+{# Final 1 : {{ ecarts.final1 }}</br>
 Final 2 : {{ ecarts.final2 }}</br>
-Final 3 : {{ ecarts.final3 }}</br>
+Final 3 : {{ ecarts.final3 }}</br> #}
+
 				
 						{# <a href="{{ path('ecart_show', {'id': ecart.id}) }}">show</a>
 						<a href="{{ path('ecart_edit', {'id': ecart.id}) }}">edit</a> #}
 				
 
-    
-	<turbo-frame id="the_frame_id">
-		{{ form_start(form) }}
-		{{ form_widget(form) }}
-		<button class="btn">{{ button_label|default('Save') }}</button>
-		{{ form_end(form) }}
-		{# {{ include('ecart/_form.html.twig') }} #}
-	</turbo-frame>
 
-Entrez "-1" pour réinitialiser
-
+</div>
 
 {% endblock %}
